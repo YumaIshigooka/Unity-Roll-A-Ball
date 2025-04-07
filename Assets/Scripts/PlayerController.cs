@@ -14,10 +14,12 @@ public class PlayerController : MonoBehaviour
     private int count;
     private int totalCount;
     private GameObject[] pickups;
+    private AudioSource audioSource;
 
 
     public float speed = 0;
     public TextMeshProUGUI countText; 
+    public GameObject countTextObject;
     public GameObject winTextObject;
 
 
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
         count = 0; 
         pickups = GameObject.FindGameObjectsWithTag("PickUp");
         totalCount = pickups.Length;
+        audioSource = GetComponent<AudioSource>();
         SetCountText();
         winTextObject.SetActive(false);
     }
@@ -49,6 +52,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update() {
+        rb.velocity *= Mathf.Pow(0.15f, Time.deltaTime);
         if (count >= totalCount && Input.GetKeyDown(KeyCode.R)) {
             restart();
         }
@@ -58,9 +62,12 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp")) {
             count = count + 1;
             SetCountText();
+            audioSource.mute = false;
+            audioSource.Play();
             other.gameObject.SetActive(false);
             if (count >= totalCount) {
                 winTextObject.SetActive(true);
+                countTextObject.SetActive(false);
             }
         }
     }
@@ -69,6 +76,7 @@ public class PlayerController : MonoBehaviour
         count = 0; 
         SetCountText();
         winTextObject.SetActive(false);
+        countTextObject.SetActive(true);
         transform.position = new Vector3(0.0f, 0.5f, 0.0f);
         foreach (GameObject pickup in pickups) {
             pickup.SetActive(true);

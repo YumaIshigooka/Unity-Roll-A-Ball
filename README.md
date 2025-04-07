@@ -2,11 +2,17 @@
 # Roll A Ball
 Tutorial followed for the Interactive Systems course.
 
-Unity Version: 2020.2.4f1
+> [!NOTE]  
+> Unity Version: **2020.2.4f1**
 
 ## Download:
-* [Windows](https://yumaisg.s-ul.eu/fkbKeIxy)
-* [Windows (64bit)](https://yumaisg.s-ul.eu/cC56EisN)
-* [MacOS](https://yumaisg.s-ul.eu/eRUVidoE)
-* [Linux](https://yumaisg.s-ul.eu/zCqDmG3e) 
+Go to the [releases](https://github.com/YumaIshigooka/Unity-Roll-A-Ball/releases) page and download the latest version available for the game
 
+## Assets:
+### SFX:
+* https://freesound.org/people/LittleRobotSoundFactory/sounds/276218/
+* https://youtu.be/GXYHa5n_VhI
+### Textures:
+* https://3dtextures.me/2025/03/31/tiles-054/
+* https://3dtextures.me/2025/02/07/terracotta-floor-tiles-002/
+* https://3dtextures.me/2019/01/10/wood-011a/
